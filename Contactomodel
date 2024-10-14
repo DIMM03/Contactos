@@ -1,0 +1,7 @@
+package com.example.contactos
+
+class ContactoModel (
+    val nombre: String,
+    val telefono: String,
+    val cor: String,
+    val profile: Int)
