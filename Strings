@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Contactos</string>
+    <string name="numero">Número</string>
+    <string name="Correo">Correo</string>
+    <string name="back">Regresar</string>
+    <string name="numero1">Número:</string>
+    <string name="correo1">Correo:</string>
+</resources>
