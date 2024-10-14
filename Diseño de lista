@@ -1,0 +1,114 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lateralimagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="118dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/arriba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/espacionombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="140dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/espacionum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="83dp" />
+
+
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textnom"
+        app:layout_constraintEnd_toStartOf="@+id/lateralimagen"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/arriba"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <TextView
+        android:id="@+id/textnom"
+        android:layout_width="40dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/espacionombre"
+        app:layout_constraintEnd_toStartOf="@+id/lateralimagen"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/arriba"
+        android:gravity="center"
+        android:textSize="8sp"
+        app:layout_constraintVertical_bias="0.805" />
+
+    <TextView
+        android:id="@+id/textnum"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:text="@string/numero1"
+        app:layout_constraintBottom_toTopOf="@+id/espacionum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="@+id/lateralimagen"
+        app:layout_constraintTop_toTopOf="@+id/arriba"
+        app:layout_constraintVertical_bias="0.488" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:id="@+id/numtel"
+        app:layout_constraintBottom_toTopOf="@+id/espacionum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textnum"
+        app:layout_constraintTop_toTopOf="@+id/arriba"
+        app:layout_constraintVertical_bias="0.488"
+        />
+
+    <TextView
+        android:id="@+id/textcorreo"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:text="@string/correo1"
+        app:layout_constraintBottom_toTopOf="@+id/espacionombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="@+id/lateralimagen"
+        app:layout_constraintTop_toTopOf="@+id/espacionum"
+        app:layout_constraintVertical_bias="0.432" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:id="@+id/corre"
+        app:layout_constraintBottom_toTopOf="@+id/espacionombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textcorreo"
+        app:layout_constraintTop_toTopOf="@+id/espacionum"
+        app:layout_constraintVertical_bias="0.432" />
+</androidx.constraintlayout.widget.ConstraintLayout>
