@@ -1,0 +1,64 @@
+package com.example.contactos
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.AdapterView
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        val listView = findViewById<ListView>(R.id.ListaContactos)
+
+        val List = listacontactos()
+
+        val itemsAdapter = ContactAdapter(this,List)
+
+        listView.adapter = itemsAdapter
+
+        listView.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                val seleccion =List[position]
+                val i = Intent(this,MainActivity2::class.java).apply {
+                    putExtra("nombre",seleccion.nombre)
+                    putExtra("img", seleccion.profile)
+                    putExtra("correo",seleccion.cor)
+                    putExtra("telefono", seleccion.telefono)
+                }
+                startActivity(i)
+                Toast.makeText(
+                    applicationContext,
+                    "Mostrando contacto", Toast.LENGTH_SHORT
+                )
+                    .show()
+            }
+        }
+    }
+private fun listacontactos():ArrayList<ContactoModel>{
+    val lista = arrayListOf(
+ContactoModel("Der","555-123-4567","redapple@example.com",R.drawable.bat),
+        ContactoModel("Luis","555-234-5678","blueocean@fakemail.com",R.drawable.ocea),
+        ContactoModel("Valeria","555-345-6789","greentree@mockmail.com",R.drawable.tre),
+        ContactoModel("Sergio","555-456-7890","yellowbanana@testmail.com",R.drawable.th),
+        ContactoModel("Mau","555-567-8901","silvercloud@demoemail.com",R.drawable.nub),
+        ContactoModel("Walter","555-678-9012","blackcoffee@placeholder.com",R.drawable.cafe),
+        ContactoModel("El pooh","555-789-0123","purplemoon@tempmail.com",R.drawable.pooh),
+        ContactoModel("Criko","555-890-1234","goldenkey@nomail.com",R.drawable.well),
+        ContactoModel("Kawuasaki","555-901-2345","orangestar@fakemailbox.com",R.drawable.asda),
+        ContactoModel("Skipper","555-012-3456","brownsugar@samplemail.com",R.drawable.s),
+        ContactoModel("Max","555-012-4321","thegoat@nofakemail.com",R.drawable.q)
+    )
+    return lista
+}
